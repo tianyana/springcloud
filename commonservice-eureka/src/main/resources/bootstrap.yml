@@ -1,0 +1,29 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: service-registry
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client: 
+    fetch-registry: false
+    register-with-eureka: false
+    serviceUrl: 
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+management: 
+  endpoints:
+    web:
+      exposure: 
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*" 

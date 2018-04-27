@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: service-config
+  rabbitmq: 
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - classpath:/shared/
+  profiles:
+    active:
+    - native
+server:
+  port: 8888
+management: 
+  endpoints:
+    web:
+      exposure: 
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*" 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

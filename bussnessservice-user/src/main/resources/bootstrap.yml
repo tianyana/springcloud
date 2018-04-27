@@ -1,0 +1,15 @@
+spring: 
+  rabbitmq: 
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  application:
+    name: service-user
+  cloud:
+    config:
+      discovery: 
+        enabled: true
+        service-id: config-server
+      label: master
+      profile: dev
