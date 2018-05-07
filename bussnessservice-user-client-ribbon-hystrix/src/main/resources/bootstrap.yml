@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-user-client-ribbon-hystrix
+server:
+  port: 8901
