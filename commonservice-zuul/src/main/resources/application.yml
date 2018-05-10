@@ -1,0 +1,10 @@
+spring: 
+  application:
+    name: service-zuul
+  cloud:
+    config:
+      discovery: 
+        enabled: true
+        service-id: service-config
+      label: master
+      profile: dev
